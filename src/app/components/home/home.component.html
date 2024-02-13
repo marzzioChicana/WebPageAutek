@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="container">
+    <h1>Home</h1>
+    <p>Home works</p>
+</div>
+
+<div class="gallery-container" (mouseenter)="setHoverStatus(true)" (mouseleave)="setHoverStatus(false)">
+    <div class="image-wrapper" *ngFor="let image of images" 
+         [ngClass]="{'active': image === activeImage, 'hovered': isHovered && image !== activeImage}" 
+         (mouseenter)="setActiveImage(image)">
+        <img [src]="image" alt="Company Logo" />
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<mat-toolbar class="custom-toolbar">
+    <div class="container-object">
+      <img [src]="logoPath" alt="AUTEK Logo">
+      
+      <div class="toolbar-buttons-container">
+        <button mat-button id="inicio" class="toolbar-button" (mouseenter)="setActive('inicio')" (mouseleave)="clearActive()" routerLink="/home">Inicio</button>
+        <button mat-button id="servicios" class="toolbar-button" (mouseenter)="setActive('servicios')" (mouseleave)="clearActive()" routerLink="/servicesCompany">Servicios</button>
+        <button mat-button id="nosotros" class="toolbar-button" (mouseenter)="setActive('nosotros')" (mouseleave)="clearActive()">Nosotros</button>
+        <button mat-button id="contacto" class="toolbar-button" (mouseenter)="setActive('contacto')" (mouseleave)="clearActive()" routerLink="/contact">Contacto</button>
+        <button mat-button id="blog" class="toolbar-button" (mouseenter)="setActive('blog')" (mouseleave)="clearActive()">Blog</button>
+      </div>
+    </div>
+</mat-toolbar>
