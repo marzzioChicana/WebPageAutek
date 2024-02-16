@@ -1,1 +1,94 @@
-<p>contact works!</p>
+<app-header></app-header>
+
+<mat-card class="card-margin">
+  <div class="flex-container">
+    <!-- Sección del formulario -->
+    <div class="form-section">
+      <mat-card-header>
+        <mat-card-title>Requiero</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+
+          <!-- Fila 1: Label Requiero y Selector de Servicio -->
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label>Servicio</mat-label>
+              <mat-select [(ngModel)]="tuRequerimiento" name="tu-requerimiento" required>
+                <mat-option *ngFor="let service of services" [value]="service.value">
+                  {{service.viewValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="contactForm.controls['tu-requerimiento']?.invalid && contactForm.controls['tu-requerimiento']?.touched">
+                Este campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Fila 2: Tu Nombre y Empresa -->
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label for="tu-nombre">Tu nombre</mat-label>
+              <input matInput placeholder="Dinos tu nombre" name="tu-nombre" [(ngModel)]="tuNombre" required>
+              <mat-error *ngIf="contactForm.controls['tu-nombre']?.invalid && contactForm.controls['tu-nombre']?.touched">
+                Este campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label for="tu-empresa">Empresa</mat-label>
+              <input matInput placeholder="Nombre de la empresa" name="tu-empresa" [(ngModel)]="tuEmpresa">
+            </mat-form-field>
+          </div>
+
+          <!-- Fila 3: Tu Email y Número de Teléfono -->
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label for="tu-email">Tu email</mat-label>
+              <input matInput placeholder="Ingresa tu correo" name="tu-email" [(ngModel)]="tuEmail" required email>
+              <mat-error *ngIf="contactForm.controls['tu-email']?.invalid && contactForm.controls['tu-email']?.touched">
+                Este campo es obligatorio o el correo no es válido
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label for="tu-telefono">Número de teléfono</mat-label>
+              <input matInput placeholder="Ingresa tu número" name="tu-telefono" [(ngModel)]="tuTelefono" required>
+              <mat-error *ngIf="contactForm.controls['tu-telefono']?.invalid && contactForm.controls['tu-telefono']?.touched">
+                Este campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Fila 4: Tu Mensaje -->
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label for="tu-mensaje">Mensaje</mat-label>
+              <textarea matInput placeholder="Coméntanos sobre tu requerimiento" name="tu-mensaje" [(ngModel)]="tuMensaje" required></textarea>
+              <mat-error *ngIf="contactForm.controls['tu-mensaje']?.invalid && contactForm.controls['tu-mensaje']?.touched">
+                Este campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Fila 5: Aceptación, Botón de Envío -->
+          <div class="form-row">
+            <mat-checkbox name="tu-aceptacion" [(ngModel)]="tuAceptacion" required class="first-child">Acepto recibir comunicaciones de Autek S.A.C.</mat-checkbox>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Enviar requerimiento</button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </div>
+
+    <!-- Sección de la imagen -->
+    <div class="image-section">
+      <!-- Puedes colocar tu imagen aquí -->
+      <img src="assets/contact/imagen-contacto.jpg" alt="Descripción de la imagen">
+    </div>
+  </div>
+</mat-card>
+
+<div class="additional-margin"></div>

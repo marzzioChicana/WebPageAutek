@@ -1,0 +1,51 @@
+.card-margin {
+  margin: 50px 75px 30px;
+  box-shadow: none; /* Elimina la sombra */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Agrega un borde alrededor de la tarjeta */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row; /* Establece la dirección de los elementos hijos en fila (por defecto es row) */
+}
+
+.form-section {
+  flex: 1; /* Ocupa el 50% del ancho disponible */
+  margin: 20px 50px; /* Añade espacio alrededor del formulario */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho del formulario */
+  /* Puedes agregar estilos adicionales según tus necesidades */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido del formulario */
+  align-items: stretch; /* Alinea los elementos al centro */
+}
+
+.image-section {
+  flex: 1; /* Ocupa el 50% del ancho disponible */
+  overflow:hidden; /* Evita que la imagen se desborde del contenedor */
+}
+
+.image-section img {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: 100%; /* Ajusta la altura de la imagen automáticamente */
+  object-fit: cover;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px; /* Ajusta el espacio entre filas según tus necesidades */
+}
+
+.form-row mat-form-field {
+  flex: 1; /* Ocupa el espacio disponible en la fila */
+}
+
+.form-row mat-form-field + mat-form-field {
+  margin-left: 16px; /* Añade espacio entre el segundo y siguientes hijos de los que tienen más de un hijo */
+}
+
+.additional-margin {
+  padding: 20px; /* Margen superior adicional según tus necesidades */
+}

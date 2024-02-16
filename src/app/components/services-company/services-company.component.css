@@ -1,0 +1,52 @@
+.servicio {
+  margin: 40px 100px;
+  border-radius: 10px;
+}
+
+.mat-elevation-z8 {
+  transition: box-shadow 0.3s ease-in-out; /* Agrega transición suave */
+}
+
+.mat-elevation-z8:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Ajusta la sombra en hover */
+}
+
+.custom-layout {
+  display: flex;
+  align-items: center;
+}
+  
+.custom-layout img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Aplicar margen izquierdo a imágenes impares */
+.servicio:nth-child(odd) .custom-layout img {
+  margin-left: 20px;
+}
+
+/* Aplicar margen derecho a imágenes pares */
+.servicio:nth-child(even) .custom-layout img {
+  margin-right: 20px;
+}
+  
+.custom-layout .card-body {
+  width: 50%;
+}
+  
+.bs-card-title {
+  font-size: 1.5rem; /* Tamaño del título */
+  margin-bottom: 10px; /* Espacio inferior del título */
+  font-weight: bold; /* Negrita */
+}
+  
+.bs-card-text {
+  font-size: 1rem; /* Tamaño del texto */
+  line-height: 1.5; /* Altura de línea */
+}
+
+.additional-margin {
+  padding: 10px; /* Margen superior adicional según tus necesidades */
+}
