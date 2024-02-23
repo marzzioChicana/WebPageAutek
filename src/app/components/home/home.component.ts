@@ -2,10 +2,14 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -34,5 +38,21 @@ export class HomeComponent {
     if (!status) {
       this.activeImage = null;
     }
+  }
+
+  imagesC = [
+    { url: 'assets/services-company/mecanizado.jpg' },
+    { url: 'assets/services-company/soldadura.jpg' },
+    { url: 'assets/services-company/torno.jpg' }
+  ];
+
+  currentIndex = 0;
+
+  prev(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.imagesC.length) % this.imagesC.length;
+  }
+
+  next(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.imagesC.length;
   }
 }
