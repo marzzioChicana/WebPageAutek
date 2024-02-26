@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, HeaderComponent, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -40,19 +38,14 @@ export class HomeComponent {
     }
   }
 
-  imagesC = [
-    { url: 'assets/services-company/mecanizado.jpg' },
-    { url: 'assets/services-company/soldadura.jpg' },
-    { url: 'assets/services-company/torno.jpg' }
-  ];
+  imagesC: string[] = ['assets/services-company/mecanizado.jpg', 'assets/services-company/soldadura.jpg', 'assets/services-company/torno.jpg']; // Replace with your image URLs
+  currentIndex: number = 0;
 
-  currentIndex = 0;
-
-  prev(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.imagesC.length) % this.imagesC.length;
+  prevSlide() {
+    this.currentIndex = (this.currentIndex === 0) ? this.imagesC.length - 1 : this.currentIndex - 1;
   }
 
-  next(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.imagesC.length;
+  nextSlide() {
+    this.currentIndex = (this.currentIndex === this.imagesC.length - 1) ? 0 : this.currentIndex + 1;
   }
 }

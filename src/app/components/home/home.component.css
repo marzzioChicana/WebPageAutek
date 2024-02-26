@@ -41,32 +41,48 @@
   padding: 20px; /* Margen superior adicional según tus necesidades */
 }
 
-/* carousel.component.css */
+
+
+
 .carousel-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.carousel {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 90%; /* Ajusta el ancho deseado */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  height: auto;
+  overflow: hidden;
 }
 
-.prev-button,
-.next-button {
+.carousel-slide {
+  width: 100%;
+  display: flex;
+  transition: transform 2s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 40px;
+  cursor: pointer;
+  display: flex; /* Añade un contenedor flexible */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
 }
 
-.prev-button {
-  left: 10px;
+.prev {
+  left: 0;
 }
 
-.next-button {
-  right: 10px;
+.next {
+  right: 0;
+}
+
+mat-icon {
+  font-size: 60px;
+  color: white;
 }

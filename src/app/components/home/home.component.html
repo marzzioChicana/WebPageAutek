@@ -5,20 +5,13 @@
     <p>Home works</p>
 </div>
 
-<!-- carousel.component.html -->
 <div class="carousel-container">
-    <div class="carousel">
-      <mat-card *ngFor="let image of imagesC; let i = index" [hidden]="currentIndex !== i">
-        <img mat-card-image [src]="image.url" alt="Image">
-        <button mat-icon-button class="prev-button" (click)="prev()">
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </button>
-        <button mat-icon-button class="next-button" (click)="next()">
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
-      </mat-card>
-    </div>
+  <div class="carousel-slide">
+    <img [src]="imagesC[currentIndex]" alt="Slide">
   </div>
+  <mat-icon (click)="prevSlide()" class="carousel-control prev">keyboard_arrow_left</mat-icon>
+  <mat-icon (click)="nextSlide()" class="carousel-control next">keyboard_arrow_right</mat-icon>
+</div>
 
 <div class="additional-margin"></div>
 
