@@ -1,0 +1,45 @@
+.custom-toolbar {
+    height: auto;
+    justify-content: center;
+    padding: 10px 0px;
+    background-color: transparent;
+}
+
+.custom-toolbar2 {
+    height: auto;
+    justify-content: center;
+    padding: 10px 0px;
+    background-color: var(--eerie-black);
+}
+
+.container-object {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0px 80px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.toolbar-buttons-container {
+    margin-left: auto;
+}
+
+button.toolbar-button {
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    transition: opacity 0.5s; /* Agregamos una transición suave */
+    color: var(--white);
+}
+
+.toolbar-button.inactive {
+    opacity: 0.5; /* Establecemos la opacidad a 0.5 para los botones inactivos */
+}

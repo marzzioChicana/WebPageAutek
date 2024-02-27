@@ -1,14 +1,21 @@
-app-header-home {
-    position: relative;
-    z-index: 100;
-}
-
 /* slider.component.css */
 
-.slider {
+.slider-back {
     height: 100vh;
     position: relative;
+    background-color: var(--eerie-black);
+}
+
+.slider {
+    height: 90%; /* Reducido de 100% a 90% para dejar espacio en la parte superior */
+    width: 90%; /* Ajustado el ancho del slider a 80% */
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1; /* Z-index superior al del contenedor del encabezado */
+    margin: 0 auto; /* Alineado horizontalmente */
+    overflow: hidden; /* Asegura que los elementos dentro del slider no se desborden */
 }
 
 .slider .list .item {

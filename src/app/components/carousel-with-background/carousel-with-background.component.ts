@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { HeaderHomeComponent } from '../header-home/header-home.component';
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
 
 interface Image {
   src: string;
@@ -10,13 +10,13 @@ interface Image {
 }
 
 @Component({
-  selector: 'app-carousel-try',
+  selector: 'app-carousel-with-background',
   standalone: true,
-  imports: [CommonModule, HeaderHomeComponent],
-  templateUrl: './carousel-try.component.html',
-  styleUrl: './carousel-try.component.css'
+  imports: [CommonModule, HeaderComponent],
+  templateUrl: './carousel-with-background.component.html',
+  styleUrl: './carousel-with-background.component.css'
 })
-export class CarouselTryComponent implements OnInit {
+export class CarouselWithBackgroundComponent {
   currentIndex: number = 0;
   images: Image[] = [
     {

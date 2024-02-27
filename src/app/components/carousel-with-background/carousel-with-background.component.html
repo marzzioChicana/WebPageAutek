@@ -1,8 +1,10 @@
-<!-- slider.component.html -->
+<app-header></app-header>
+
+<div class="slider-back">
+    <!-- slider.component.html -->
 <div class="slider">
     <!-- list Items -->
     <div class="list">
-        <app-header-home></app-header-home>
         <div class="item" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
             <img [src]="image.src" alt="Slider Image">
             <div class="content">
@@ -26,6 +28,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="additional-margin"></div>

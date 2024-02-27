@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { HeaderHomeComponent } from '../header-home/header-home.component';
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
 
 interface Image {
   src: string;
@@ -10,13 +10,13 @@ interface Image {
 }
 
 @Component({
-  selector: 'app-carousel-try',
+  selector: 'app-carousel-headertop',
   standalone: true,
-  imports: [CommonModule, HeaderHomeComponent],
-  templateUrl: './carousel-try.component.html',
-  styleUrl: './carousel-try.component.css'
+  imports: [CommonModule, HeaderComponent],
+  templateUrl: './carousel-headertop.component.html',
+  styleUrl: './carousel-headertop.component.css'
 })
-export class CarouselTryComponent implements OnInit {
+export class CarouselHeadertopComponent {
   currentIndex: number = 0;
   images: Image[] = [
     {
